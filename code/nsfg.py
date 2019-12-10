@@ -53,6 +53,7 @@ def ReadFemPreg(dct_file='2002FemPreg.dct',
     return df
 
 
+
 def CleanFemPreg(df):
     """Recodes variables from the pregnancy frame.
 
