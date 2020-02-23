@@ -79,6 +79,7 @@ def MakeFigures(df):
     heights, weights = GetHeightWeight(sample, hjitter=1.3, wjitter=0.5)
     ScatterPlot(heights, weights)
 
+    thinkplot.show()
     thinkplot.Save(root='scatter1')
 
     # with jitter and transparency
@@ -89,6 +90,7 @@ def MakeFigures(df):
     thinkplot.SubPlot(2)
     heights, weights = GetHeightWeight(df, hjitter=1.3, wjitter=0.5)
     HexBin(heights, weights)
+    thinkplot.show()
     thinkplot.Save(root='scatter2')
 
 
@@ -112,7 +114,7 @@ def BinnedPercentiles(df):
         weights = [cdf.Percentile(percent) for cdf in cdfs]
         label = '%dth' % percent
         thinkplot.Plot(heights, weights, label=label)
-
+    thinkplot.show()
     thinkplot.Save(root='scatter3',
                    xlabel='height (cm)',
                    ylabel='weight (kg)')
@@ -147,7 +149,7 @@ def main(script):
     df = brfss.ReadBrfss(nrows=None)
     df = df.dropna(subset=['htm3', 'wtkg2'])
     Correlations(df)
-    return
+#return
 
     MakeFigures(df)
     BinnedPercentiles(df)

@@ -12,6 +12,7 @@ import pandas
 import patsy
 import random
 import numpy as np
+import statsmodels
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import re
